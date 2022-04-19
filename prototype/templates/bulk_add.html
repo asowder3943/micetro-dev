@@ -1,0 +1,19 @@
+{% extends 'internal_nav.html' %}
+
+{% block main %}
+<main role="main">
+    <div class="container mt-5">
+        <h1 class="display-5">Bulk Add Mice For {{ experiment }}</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            <label for="n" class="col-md-4">N: </label><input type="number" name="n" id="n" value="30" class="col-md-1"> <br>
+            <label for="start_id" class="col-md-4">Mouse Starting ID: </label><input type="number" name="start_id" id="start_id" value="1" class="col-md-1"> <br>
+            <label for="mpc" class="col-md-4">Mouse Per Cage: </label><input type="number" name="mpc" id="mpc" value="5" class="col-md-1"> <br>
+            <label for="start_cage" class="col-md-4">Cage Starting #: </label><input type="number" name="start_cage" id="start_cage" value="1" class="col-md-1"> <br>
+            <div class="col-md-5">
+            <input type="submit" value="Submit" class="float-right mr-1">
+            </div>
+        </form>
+    </div>
+</main>
+{% endblock %}

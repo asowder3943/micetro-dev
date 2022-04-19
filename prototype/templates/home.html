@@ -1,0 +1,44 @@
+{% extends 'nav.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block main %}
+<main role="main">
+    {% load static %}
+    <div class="jumbotron h-50" style="background-image: url({% static 'img/banner.png' %}); background-repeat:no-repeat;background-size:cover;background-position:center;" ></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Reports and Auditing</h2>
+                <p>Export your data in common formats (xlsx, pdf and more) for auditing and progress tracking. 
+                    Or use our online suite of rich interactive reports. 
+                    Give your team full visibility into the status of your experiments. 
+                    All on Demand. No loose spreadsheets. No long Email chains. No difficult handwriting. Full Stop</p>
+                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Interactive Trial Design</h2>
+                <p>Define your parameters and let mice tracker do the rest. 
+                    Our interactive trial design forms allow you to quickly decide on a number of arms, replicates and even treatment conditions. 
+                    Mice tracker will then prepopulate your database with information about each test subject. 
+                    Mouse tracker will even help you schedule important action items and generate checklists and datasheets for your researchers.</p>
+                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Data Safety / Validation</h2>
+                <p>Nightly backups and Record access control are only the start. Our data safety and validations tools ensure your data is accurate and reliable. 
+                    Quickly define validation rules that ensure your data integrity. Protect your labs reputation and valuable data today. 
+                </p>
+                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            </div>
+        </div>
+        <hr>
+    </div> 
+
+</main>
+
+<footer class="container">
+    <p>&copy; SowderSolutions 2022</p>
+</footer>
+{% endblock %}

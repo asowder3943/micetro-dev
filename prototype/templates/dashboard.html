@@ -1,0 +1,27 @@
+{% extends 'internal_nav.html' %}
+
+{% block title %} Login {% endblock %}
+
+{% block main %}
+{% load static %}
+<div style="height: 100vh; background-image: url({% static 'img/login.png' %}); background-repeat:no-repeat;background-size:cover;background-position:center;">
+<div class="container" > 
+    <div class="row">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-5">
+            <div class="h-25 mt-5 mb-2">
+                {% if user.is_authenticated %}
+                    <p class="text-center display-3 ">Welcome Back {{ user.get_username }}</p>
+                    {% for exp in experiments%}
+                    <a class="btn btn-primary" href="{% url 'experiment_home' experiment_id=exp.id%}" role="button">{{exp}}</a></p>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-md-3">
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

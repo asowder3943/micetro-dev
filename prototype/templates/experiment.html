@@ -1,0 +1,66 @@
+{% extends 'internal_nav.html' %}
+
+{% block main %}
+<main role="main">
+    <div class="container mt-5">
+        <h1 class="display-3">{{ experiment }}</h1>
+        <p>{{ experiment.description }}<p>
+        
+        <h2 class="display-4">Groups</h2>
+        <table class="table">
+            <thead><th>Group</th><th>Description</th></thead>
+            <tbody>
+                {% for group in experiment.groups %}
+                <tr>
+                    <td>{{group.name}}</td>
+                    <td>{{group.description}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <h2 class="display-4">Data Entry</h2>
+
+        <table class="table">
+            <thead><th>Cage #</th>
+                {% for group in experiment.groups %}
+                    <th>{{group.name}}</th>
+                {% endfor %}
+            </thead>
+            <tbody>
+                {% for cage in experiment.cages %}
+                <tr>
+                    <td>
+                        <p><a class="btn btn-primary" href="{% url 'cage_measurement' cage_id=cage.id%}" role="button">Cage {{cage.cage_number}}</a></p>
+                    </td>
+                    {% for l in cage.group_lists %}
+                        <td>{{l}}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        <h2 class="display-4">Tools</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Bulk Add Mice</h2>
+                <p>Prepopulate the Database with mice subjects</p>
+                <p><a class="btn btn-secondary" href="{% url 'bulk_add' experiment_id=experiment.id%}" role="button">Begin &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Volume Matching Treatment Assigment</h2>
+                <p>Assign Mice to treatment groups based on tumor volumes</p>
+                <p><a class="btn btn-secondary" href="{% url 'volume_match' experiment_id=experiment.id%}" role="button">Begin &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>View Preliminary Data</h2>
+                <p>Generate reports for the currently recorded data.
+                </p>
+                <p><a class="btn btn-secondary" href="#" role="button">Begin &raquo;</a></p>
+            </div>
+        </div>
+        <hr>
+    </div> 
+</main>
+{% endblock %}
