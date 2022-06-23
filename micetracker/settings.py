@@ -10,6 +10,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
+    '45.33.99.157',
+    'micetrolims.com'
 ]
 
 INSTALLED_APPS = [
