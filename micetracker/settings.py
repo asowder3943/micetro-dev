@@ -9,7 +9,10 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 DEBUG = True
 
 ALLOWED_HOSTS = [
+<<<<<<< HEAD
     '127.0.0.1',
+=======
+>>>>>>> a2384710e0223268fcc67865cd49cbd42371ea44
     '45.33.99.157',
     'micetrolims.com'
 ]
